@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Introspect",
+        "repositoryURL": "https://github.com/siteline/SwiftUI-Introspect.git",
+        "state": {
+          "branch": "master",
+          "revision": "5c501bf4a581e683b96a4915bb2566e88a264c95",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

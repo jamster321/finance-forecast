@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "description": "🍺 Drinks",
+        "amount": 50.0,
+        "date": "2020-07-01T00:00:00+00:00",
+        "complete": false,
+        "monthly": true
+    },
+    {
+        "id": 2,
+        "description": "📡 Mobile Phone",
+        "amount": 20.0,
+        "date": "2020-07-01T00:00:00+00:00",
+        "complete": false,
+        "monthly": true
+    },
+    {
+        "id": 3,
+        "description": "💰 Income",
+        "amount": -1000.0,
+        "date": "2020-07-01T00:00:00+00:00",
+        "complete": false,
+        "monthly": true
+    },
+    {
+        "id": 4,
+        "description": "🏠 Rent",
+        "amount": 800.0,
+        "date": "2020-07-01T00:00:00+00:00",
+        "complete": false,
+        "monthly": true
+    },
+    {
+        "id": 5,
+        "description": "🍽 Food",
+        "amount": 10.0,
+        "date": "2020-07-01T00:00:00+00:00",
+        "complete": false,
+        "monthly": true
+    }
+]

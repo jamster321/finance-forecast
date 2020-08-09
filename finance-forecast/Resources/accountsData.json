@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Account 1",
+        "balance": 100,
+        "credit": false
+    },
+    {
+        "id": 2,
+        "name": "Account 2",
+        "balance": 200,
+        "credit": true
+    },
+    {
+        "id": 3,
+        "name": "Account 3",
+        "balance": 350,
+        "credit": false
+    },
+    {
+        "id": 4,
+        "name": "Account 4",
+        "balance": 75,
+        "credit": false
+    },
+    {
+        "id": 5,
+        "name": "Account 5",
+        "balance": 150,
+        "credit": false
+    }
+]

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,21 @@
 		495AB33624CD696E007C5130 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495AB33424CD696E007C5130 /* LaunchScreen.storyboard */; };
 		495AB34124CD696F007C5130 /* finance_forecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB34024CD696F007C5130 /* finance_forecastTests.swift */; };
 		495AB34C24CD696F007C5130 /* finance_forecastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB34B24CD696F007C5130 /* finance_forecastUITests.swift */; };
+		495AB35A24CD7569007C5130 /* JTransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB35924CD7569007C5130 /* JTransactionList.swift */; };
+		495AB35C24CD761A007C5130 /* JTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB35B24CD761A007C5130 /* JTransaction.swift */; };
+		495AB35E24CD76DC007C5130 /* JTransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB35D24CD76DC007C5130 /* JTransactionRow.swift */; };
+		495AB36024CD7745007C5130 /* transactionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 495AB35F24CD7745007C5130 /* transactionData.json */; };
+		495AB36324CD7A10007C5130 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB36224CD7A10007C5130 /* Data.swift */; };
+		495AB36924CD9A79007C5130 /* accountsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 495AB36824CD9A79007C5130 /* accountsData.json */; };
+		495AB36B24CD9B39007C5130 /* AccountRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB36A24CD9B39007C5130 /* AccountRow.swift */; };
+		495AB36D24CDA03B007C5130 /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB36C24CDA03B007C5130 /* AccountList.swift */; };
+		495AB36F24CDA421007C5130 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB36E24CDA421007C5130 /* ForecastView.swift */; };
+		495AB37124CDA4D6007C5130 /* ForecastRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB37024CDA4D6007C5130 /* ForecastRow.swift */; };
+		495AB37324CDD88F007C5130 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB37224CDD88F007C5130 /* Forecast.swift */; };
+		495AB37724CE21FB007C5130 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB37624CE21FA007C5130 /* UserData.swift */; };
+		497B127524E009E700FEF018 /* AccountAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B127424E009E700FEF018 /* AccountAdd.swift */; };
+		49D39F3B24D8337700741A8A /* FinanceForecast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49D39F3924D8337700741A8A /* FinanceForecast.xcdatamodeld */; };
+		49E3175224D1A6CC004F3720 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 49E3175124D1A6CC004F3720 /* Introspect */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		495AB32624CD696A007C5130 /* finance-forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "finance-forecast.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		495AB32624CD696A007C5130 /* Finances.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finances.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		495AB32924CD696A007C5130 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		495AB32B24CD696A007C5130 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		495AB32D24CD696A007C5130 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +64,20 @@
 		495AB34724CD696F007C5130 /* finance-forecastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "finance-forecastUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		495AB34B24CD696F007C5130 /* finance_forecastUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finance_forecastUITests.swift; sourceTree = "<group>"; };
 		495AB34D24CD696F007C5130 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		495AB35924CD7569007C5130 /* JTransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTransactionList.swift; sourceTree = "<group>"; };
+		495AB35B24CD761A007C5130 /* JTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTransaction.swift; sourceTree = "<group>"; };
+		495AB35D24CD76DC007C5130 /* JTransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTransactionRow.swift; sourceTree = "<group>"; };
+		495AB35F24CD7745007C5130 /* transactionData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = transactionData.json; sourceTree = "<group>"; };
+		495AB36224CD7A10007C5130 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		495AB36824CD9A79007C5130 /* accountsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = accountsData.json; sourceTree = "<group>"; };
+		495AB36A24CD9B39007C5130 /* AccountRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRow.swift; sourceTree = "<group>"; };
+		495AB36C24CDA03B007C5130 /* AccountList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountList.swift; sourceTree = "<group>"; };
+		495AB36E24CDA421007C5130 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
+		495AB37024CDA4D6007C5130 /* ForecastRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRow.swift; sourceTree = "<group>"; };
+		495AB37224CDD88F007C5130 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		495AB37624CE21FA007C5130 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		497B127424E009E700FEF018 /* AccountAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAdd.swift; sourceTree = "<group>"; };
+		49D39F3A24D8337700741A8A /* FinanceForecast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinanceForecast.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49E3175224D1A6CC004F3720 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +109,7 @@
 		495AB31D24CD696A007C5130 = {
 			isa = PBXGroup;
 			children = (
+				49D39F3924D8337700741A8A /* FinanceForecast.xcdatamodeld */,
 				495AB32824CD696A007C5130 /* finance-forecast */,
 				495AB33F24CD696F007C5130 /* finance-forecastTests */,
 				495AB34A24CD696F007C5130 /* finance-forecastUITests */,
@@ -89,7 +120,7 @@
 		495AB32724CD696A007C5130 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				495AB32624CD696A007C5130 /* finance-forecast.app */,
+				495AB32624CD696A007C5130 /* Finances.app */,
 				495AB33C24CD696F007C5130 /* finance-forecastTests.xctest */,
 				495AB34724CD696F007C5130 /* finance-forecastUITests.xctest */,
 			);
@@ -99,6 +130,8 @@
 		495AB32824CD696A007C5130 /* finance-forecast */ = {
 			isa = PBXGroup;
 			children = (
+				495AB36424CD7AD8007C5130 /* Models */,
+				495AB36124CD791C007C5130 /* Resources */,
 				495AB32924CD696A007C5130 /* AppDelegate.swift */,
 				495AB32B24CD696A007C5130 /* SceneDelegate.swift */,
 				495AB32D24CD696A007C5130 /* ContentView.swift */,
@@ -106,6 +139,13 @@
 				495AB33424CD696E007C5130 /* LaunchScreen.storyboard */,
 				495AB33724CD696E007C5130 /* Info.plist */,
 				495AB33124CD696E007C5130 /* Preview Content */,
+				495AB35924CD7569007C5130 /* JTransactionList.swift */,
+				495AB35D24CD76DC007C5130 /* JTransactionRow.swift */,
+				495AB36A24CD9B39007C5130 /* AccountRow.swift */,
+				497B127424E009E700FEF018 /* AccountAdd.swift */,
+				495AB36C24CDA03B007C5130 /* AccountList.swift */,
+				495AB36E24CDA421007C5130 /* ForecastView.swift */,
+				495AB37024CDA4D6007C5130 /* ForecastRow.swift */,
 			);
 			path = "finance-forecast";
 			sourceTree = "<group>";
@@ -136,6 +176,26 @@
 			path = "finance-forecastUITests";
 			sourceTree = "<group>";
 		};
+		495AB36124CD791C007C5130 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				495AB35F24CD7745007C5130 /* transactionData.json */,
+				495AB36824CD9A79007C5130 /* accountsData.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		495AB36424CD7AD8007C5130 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				495AB37624CE21FA007C5130 /* UserData.swift */,
+				495AB36224CD7A10007C5130 /* Data.swift */,
+				495AB35B24CD761A007C5130 /* JTransaction.swift */,
+				495AB37224CDD88F007C5130 /* Forecast.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,8 +212,11 @@
 			dependencies = (
 			);
 			name = "finance-forecast";
+			packageProductDependencies = (
+				49E3175124D1A6CC004F3720 /* Introspect */,
+			);
 			productName = "finance-forecast";
-			productReference = 495AB32624CD696A007C5130 /* finance-forecast.app */;
+			productReference = 495AB32624CD696A007C5130 /* Finances.app */;
 			productType = "com.apple.product-type.application";
 		};
 		495AB33B24CD696F007C5130 /* finance-forecastTests */ = {
@@ -224,6 +287,9 @@
 				Base,
 			);
 			mainGroup = 495AB31D24CD696A007C5130;
+			packageReferences = (
+				49E3175024D1A6CC004F3720 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
+			);
 			productRefGroup = 495AB32724CD696A007C5130 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -240,9 +306,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495AB36024CD7745007C5130 /* transactionData.json in Resources */,
 				495AB33624CD696E007C5130 /* LaunchScreen.storyboard in Resources */,
 				495AB33324CD696E007C5130 /* Preview Assets.xcassets in Resources */,
 				495AB33024CD696E007C5130 /* Assets.xcassets in Resources */,
+				495AB36924CD9A79007C5130 /* accountsData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,9 +335,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495AB36324CD7A10007C5130 /* Data.swift in Sources */,
 				495AB32A24CD696A007C5130 /* AppDelegate.swift in Sources */,
+				495AB36F24CDA421007C5130 /* ForecastView.swift in Sources */,
+				497B127524E009E700FEF018 /* AccountAdd.swift in Sources */,
 				495AB32C24CD696A007C5130 /* SceneDelegate.swift in Sources */,
+				495AB35E24CD76DC007C5130 /* JTransactionRow.swift in Sources */,
+				49D39F3B24D8337700741A8A /* FinanceForecast.xcdatamodeld in Sources */,
+				495AB35A24CD7569007C5130 /* JTransactionList.swift in Sources */,
+				495AB37724CE21FB007C5130 /* UserData.swift in Sources */,
+				495AB36D24CDA03B007C5130 /* AccountList.swift in Sources */,
+				495AB36B24CD9B39007C5130 /* AccountRow.swift in Sources */,
 				495AB32E24CD696A007C5130 /* ContentView.swift in Sources */,
+				495AB37324CDD88F007C5130 /* Forecast.swift in Sources */,
+				495AB35C24CD761A007C5130 /* JTransaction.swift in Sources */,
+				495AB37124CDA4D6007C5130 /* ForecastRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,6 +516,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"finance-forecast/Preview Content\"";
+				DEVELOPMENT_TEAM = 6NV4F4VTT3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "finance-forecast/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -443,7 +524,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jamie-willis.finance-forecast";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Finances;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -455,6 +536,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"finance-forecast/Preview Content\"";
+				DEVELOPMENT_TEAM = 6NV4F4VTT3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "finance-forecast/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -462,7 +544,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jamie-willis.finance-forecast";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Finances;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -588,6 +670,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		49E3175024D1A6CC004F3720 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		49E3175124D1A6CC004F3720 /* Introspect */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 49E3175024D1A6CC004F3720 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
+			productName = Introspect;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		49D39F3924D8337700741A8A /* FinanceForecast.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				49D39F3A24D8337700741A8A /* FinanceForecast.xcdatamodel */,
+			);
+			currentVersion = 49D39F3A24D8337700741A8A /* FinanceForecast.xcdatamodel */;
+			path = FinanceForecast.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 495AB31E24CD696A007C5130 /* Project object */;
 }
