@@ -31,7 +31,6 @@ struct ForecastRow: View {
             }
         }
         .contentShape(Rectangle())
-        .padding()
     }
 }
 

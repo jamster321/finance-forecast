@@ -2,13 +2,13 @@ import SwiftUI
 import Introspect
 
 struct AccountList: View {
-    @Environment(\.managedObjectContext) var managedObjectContext
-
+    @Environment(\.managedObjectContext) var moc
+    
     @FetchRequest(
-      entity: Account.entity(),
-      sortDescriptors: [
-        NSSortDescriptor(keyPath: \Account.name, ascending: true)
-      ]
+        entity: Account.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Account.name, ascending: true)
+        ]
     ) var accounts: FetchedResults<Account>
     
     @State var isPresented = false
@@ -29,10 +29,11 @@ struct AccountList: View {
                         .fontWeight(.medium)
                 }.padding([.horizontal])
                 List {
-                  ForEach(accounts, id: \.name) {
-                    AccountRow(account: $0)
-                  }
-                  .onDelete(perform: deleteAccount)
+                    ForEach(accounts, id: \.name) { account in
+                        AccountRow(account: account)
+                            .environment(\.managedObjectContext, self.moc)
+                    }
+                    .onDelete(perform: deleteAccount)
                 }
                 .sheet(isPresented: $isPresented) {
                     AccountAdd(
@@ -42,20 +43,22 @@ struct AccountList: View {
                 }
             }
             .navigationBarTitle("Accounts")
-            .navigationBarItems(trailing: Button(action: {
-                self.isPresented.toggle()
-            }) {
-                Text("Add")
-            }
-            .padding([.leading, .top, .bottom]))
+            .navigationBarItems(trailing:
+                Button(action: {
+                    self.isPresented.toggle()
+                }) {
+                    Text("Add")
+                }
+                .padding([.leading, .top, .bottom])
+            )
         }
         
     }
     
     func addAccount(name: String) {
-        let account = Account(context: self.managedObjectContext)
-           account.name = name
-           account.balance = 100.0
+        let account = Account(context: self.moc)
+        account.name = name
+        account.balance = 100.0
         self.saveContext()
         self.isPresented = false
     }
@@ -65,19 +68,19 @@ struct AccountList: View {
     }
     
     func deleteAccount(at offsets: IndexSet) {
-      offsets.forEach { index in
-        let account = self.accounts[index]
-        self.managedObjectContext.delete(account)
-      }
-      saveContext()
+        offsets.forEach { index in
+            let account = self.accounts[index]
+            self.moc.delete(account)
+        }
+        saveContext()
     }
     
     func saveContext() {
-      do {
-        try managedObjectContext.save()
-      } catch {
-        print("Error saving managed object context: \(error)")
-      }
+        do {
+            try moc.save()
+        } catch {
+            print("Error saving managed object context: \(error)")
+        }
     }
 }
 

@@ -1,18 +1,11 @@
 import SwiftUI
 
 struct AccountRow: View {
-    @EnvironmentObject var userData: UserData
-    var account: Account
-    
-    @State private var balance: Float = 0
+    @Environment(\.managedObjectContext) var moc
+    @ObservedObject var account: Account
     
     init(account: Account) {
         self.account = account
-        self._balance = State(wrappedValue: account.balance)
-    }
-    
-    var accountIndex: Int {
-        userData.accounts.firstIndex(where: { $0.name == account.name })!
     }
     
     private var currencyFormatter: NumberFormatter = {
@@ -25,20 +18,24 @@ struct AccountRow: View {
     }()
     
     var body: some View {
-        VStack{
-            HStack(alignment: .top) {
-                account.name.map(Text.init)
-                Spacer()
-                TextField("Balance",
-                           value: $balance,
-                           formatter: currencyFormatter,
-                           onCommit: {
-                            self.account.balance = self.balance
-                 }).foregroundColor(Color.blue).multilineTextAlignment(.trailing)
-            }
+        HStack(alignment: .top) {
+            account.name.map(Text.init)
+            Spacer()
+            TextField("Balance",
+                      value: self.$account.balance,
+                      formatter: currencyFormatter,
+                      onCommit: saveContext
+            ).foregroundColor(Color.blue).multilineTextAlignment(.trailing)
         }
         .contentShape(Rectangle())
-        .padding()
+    }
+    
+    func saveContext() {
+        do {
+            try moc.save()
+        } catch {
+            print("Error saving managed object context: \(error)")
+        }
     }
 }
 
@@ -47,6 +44,6 @@ struct AccountRow_Previews: PreviewProvider {
         let userData = UserData()
         return AccountRow(account: userData.accounts[0])
             .environmentObject(userData)
-        .previewLayout(.fixed(width: 300, height: 70))
+            .previewLayout(.fixed(width: 300, height: 70))
     }
 }
