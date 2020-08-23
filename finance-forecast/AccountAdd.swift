@@ -10,7 +10,7 @@ import SwiftUI
 
 struct AccountAdd: View {
     
-    @State var name = "New Account"
+    @State var name = ""
     
     let onComplete: (String) -> Void
     let onCancel: () -> Void
@@ -18,9 +18,7 @@ struct AccountAdd: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Name")) {
-                    TextField("Name", text: $name)
-                }
+                TextField("Name", text: $name)
             }
             .navigationBarTitle(Text("Add Account"), displayMode: .inline)
             .navigationBarItems(

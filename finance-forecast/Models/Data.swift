@@ -1,9 +1,6 @@
 import UIKit
 import SwiftUI
 
-var transactionData: [JTransaction] = Load("transactionData.json")
-//let accountsData: [Account] = Load("accountsData.json")
-
 func Load<T: Decodable>(_ filename: String) -> T {
     let data: Data
     

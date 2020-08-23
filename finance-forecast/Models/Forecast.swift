@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct Forecast: Hashable, Codable, Identifiable {
+struct Forecast: Hashable, Identifiable {
     var id: Int
     var month: Int
     var year: Int
-    var transactions: [JTransaction]
+    var transactions: [Transaction]
     var endBalance: Float?
     
     func transactionTotal() -> Float {

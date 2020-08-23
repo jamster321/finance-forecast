@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct JTransactionRow: View {
-    var transaction: JTransaction
+struct TransactionRow: View {
+    var transaction: Transaction
     let dateFormatter = DateFormatter()
     
-    init(transaction: JTransaction) {
+    init(transaction: Transaction) {
         dateFormatter.dateFormat = "dd MMM"
         self.transaction = transaction
     }
@@ -15,8 +15,8 @@ struct JTransactionRow: View {
     var body: some View {
         VStack{
             HStack(alignment: .top) {
-                Text(dateFormatter.string(from: transaction.date))
-                Text(transaction.description)
+                Text(dateFormatter.string(from: transaction.date!))
+                Text(transaction.name!)
                 Spacer()
                 Text(currencyFormatter.string(from: (transaction.amount * -1) as NSNumber)!)
                 Button(action: toggle){
@@ -29,12 +29,12 @@ struct JTransactionRow: View {
     }
 }
 
-struct JTransactionRow_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            JTransactionRow(transaction: transactionData[0])
-            JTransactionRow(transaction: transactionData[1])
-        }
-        .previewLayout(.fixed(width: 300, height: 70))
-    }
-}
+//struct TransactionRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Group {
+//            TransactionRow(transaction: transactionData[0])
+//            TransactionRow(transaction: transactionData[1])
+//        }
+//        .previewLayout(.fixed(width: 300, height: 70))
+//    }
+//}

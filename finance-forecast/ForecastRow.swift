@@ -27,7 +27,6 @@ struct ForecastRow: View {
                     Text(currencyFormatter.string(from: self.balance as NSNumber)!)
                         .fontWeight(.medium)
                     }
-                Image(systemName: "chevron.right")
             }
         }
         .contentShape(Rectangle())

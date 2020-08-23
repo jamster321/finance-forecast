@@ -10,11 +10,11 @@ import SwiftUI
 
 let currencyFormatter = NumberFormatter()
 
-var monthlyForecasts = [Forecast]()
+
 struct ContentView: View {
-    @EnvironmentObject private var userData: UserData
+    @Environment(\.managedObjectContext) var moc
     
-    @Environment(\.managedObjectContext) var managedObjectContext
+    @EnvironmentObject private var userData: UserData
     
     @FetchRequest(
       entity: Account.entity(),
@@ -23,50 +23,19 @@ struct ContentView: View {
       ]
     ) var accounts: FetchedResults<Account>
     
-    @State private var selection = 0
+    @FetchRequest(
+        entity: Transaction.entity(),
+        sortDescriptors: [
+            NSSortDescriptor(keyPath: \Transaction.date, ascending: true)
+        ]
+    ) var transactions: FetchedResults<Transaction>
     
-    var totalBalance: Float {
-//        var t: Float = 0
-//        for account in accounts {
-//            t += account.balance*(account.credit ? -1 : 1)
-//        }
-        return 0
-    }
+    @State private var selection = 0
     
     init() {
         currencyFormatter.usesGroupingSeparator = true
         currencyFormatter.numberStyle = .currency
         currencyFormatter.currencyCode = "GBP"
-
-        monthlyForecasts.removeAll()
-
-        let currentDate = Date.init()
-        let calendar = Calendar.current
-        var dateComponents = DateComponents()
-        var forecastBalance = totalBalance
-
-        for i in 0...3 {
-            dateComponents.month = i
-            let forecastDate = calendar.date(byAdding: dateComponents, to: currentDate)!
-            let forecastMonth = calendar.component(.month, from: forecastDate)
-            let forecastYear = calendar.component(.year, from: forecastDate)
-
-            var forecast = Forecast(id: i, month: forecastMonth, year: forecastYear, transactions: [JTransaction]())
-
-            for transaction in transactionData {
-                let txMonth = calendar.component(.month, from: transaction.date)
-                let txYear  = calendar.component(.year, from: transaction.date)
-
-                if txMonth == forecastMonth && txYear == forecastYear {
-                    forecast.transactions.append(transaction)
-                }
-            }
-
-            forecastBalance = forecastBalance - forecast.transactionTotal()
-            forecast.endBalance = forecastBalance
-
-            monthlyForecasts.append(forecast)
-        }
     }
     
     var body: some View {
@@ -77,7 +46,7 @@ struct ContentView: View {
                     Image(systemName: "creditcard")
             }
             .tag(0)
-            ForecastView(totalBalance: totalBalance)
+            ForecastList(transactions: transactions)
                 .tabItem {
                     Text("Forecast")
                     Image(systemName: "calendar")

@@ -15,20 +15,20 @@
 		495AB33624CD696E007C5130 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 495AB33424CD696E007C5130 /* LaunchScreen.storyboard */; };
 		495AB34124CD696F007C5130 /* finance_forecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB34024CD696F007C5130 /* finance_forecastTests.swift */; };
 		495AB34C24CD696F007C5130 /* finance_forecastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB34B24CD696F007C5130 /* finance_forecastUITests.swift */; };
-		495AB35A24CD7569007C5130 /* JTransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB35924CD7569007C5130 /* JTransactionList.swift */; };
-		495AB35C24CD761A007C5130 /* JTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB35B24CD761A007C5130 /* JTransaction.swift */; };
-		495AB35E24CD76DC007C5130 /* JTransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB35D24CD76DC007C5130 /* JTransactionRow.swift */; };
+		495AB35A24CD7569007C5130 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB35924CD7569007C5130 /* TransactionList.swift */; };
+		495AB35E24CD76DC007C5130 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB35D24CD76DC007C5130 /* TransactionRow.swift */; };
 		495AB36024CD7745007C5130 /* transactionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 495AB35F24CD7745007C5130 /* transactionData.json */; };
 		495AB36324CD7A10007C5130 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB36224CD7A10007C5130 /* Data.swift */; };
 		495AB36924CD9A79007C5130 /* accountsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 495AB36824CD9A79007C5130 /* accountsData.json */; };
 		495AB36B24CD9B39007C5130 /* AccountRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB36A24CD9B39007C5130 /* AccountRow.swift */; };
 		495AB36D24CDA03B007C5130 /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB36C24CDA03B007C5130 /* AccountList.swift */; };
-		495AB36F24CDA421007C5130 /* ForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB36E24CDA421007C5130 /* ForecastView.swift */; };
+		495AB36F24CDA421007C5130 /* ForecastList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB36E24CDA421007C5130 /* ForecastList.swift */; };
 		495AB37124CDA4D6007C5130 /* ForecastRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB37024CDA4D6007C5130 /* ForecastRow.swift */; };
-		495AB37324CDD88F007C5130 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB37224CDD88F007C5130 /* Forecast.swift */; };
 		495AB37724CE21FB007C5130 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB37624CE21FA007C5130 /* UserData.swift */; };
 		497B127524E009E700FEF018 /* AccountAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B127424E009E700FEF018 /* AccountAdd.swift */; };
 		49D39F3B24D8337700741A8A /* FinanceForecast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49D39F3924D8337700741A8A /* FinanceForecast.xcdatamodeld */; };
+		49E1F35C24F30C21005FF0B0 /* TransactionAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1F35B24F30C21005FF0B0 /* TransactionAdd.swift */; };
+		49E1F35E24F313CC005FF0B0 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1F35D24F313CC005FF0B0 /* Forecast.swift */; };
 		49E3175224D1A6CC004F3720 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 49E3175124D1A6CC004F3720 /* Introspect */; };
 /* End PBXBuildFile section */
 
@@ -64,20 +64,20 @@
 		495AB34724CD696F007C5130 /* finance-forecastUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "finance-forecastUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		495AB34B24CD696F007C5130 /* finance_forecastUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = finance_forecastUITests.swift; sourceTree = "<group>"; };
 		495AB34D24CD696F007C5130 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		495AB35924CD7569007C5130 /* JTransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTransactionList.swift; sourceTree = "<group>"; };
-		495AB35B24CD761A007C5130 /* JTransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTransaction.swift; sourceTree = "<group>"; };
-		495AB35D24CD76DC007C5130 /* JTransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JTransactionRow.swift; sourceTree = "<group>"; };
+		495AB35924CD7569007C5130 /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
+		495AB35D24CD76DC007C5130 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
 		495AB35F24CD7745007C5130 /* transactionData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = transactionData.json; sourceTree = "<group>"; };
 		495AB36224CD7A10007C5130 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		495AB36824CD9A79007C5130 /* accountsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = accountsData.json; sourceTree = "<group>"; };
 		495AB36A24CD9B39007C5130 /* AccountRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRow.swift; sourceTree = "<group>"; };
 		495AB36C24CDA03B007C5130 /* AccountList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountList.swift; sourceTree = "<group>"; };
-		495AB36E24CDA421007C5130 /* ForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastView.swift; sourceTree = "<group>"; };
+		495AB36E24CDA421007C5130 /* ForecastList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastList.swift; sourceTree = "<group>"; };
 		495AB37024CDA4D6007C5130 /* ForecastRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRow.swift; sourceTree = "<group>"; };
-		495AB37224CDD88F007C5130 /* Forecast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		495AB37624CE21FA007C5130 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		497B127424E009E700FEF018 /* AccountAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAdd.swift; sourceTree = "<group>"; };
 		49D39F3A24D8337700741A8A /* FinanceForecast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinanceForecast.xcdatamodel; sourceTree = "<group>"; };
+		49E1F35B24F30C21005FF0B0 /* TransactionAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionAdd.swift; sourceTree = "<group>"; };
+		49E1F35D24F313CC005FF0B0 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,12 +139,13 @@
 				495AB33424CD696E007C5130 /* LaunchScreen.storyboard */,
 				495AB33724CD696E007C5130 /* Info.plist */,
 				495AB33124CD696E007C5130 /* Preview Content */,
-				495AB35924CD7569007C5130 /* JTransactionList.swift */,
-				495AB35D24CD76DC007C5130 /* JTransactionRow.swift */,
+				495AB35924CD7569007C5130 /* TransactionList.swift */,
+				495AB35D24CD76DC007C5130 /* TransactionRow.swift */,
+				49E1F35B24F30C21005FF0B0 /* TransactionAdd.swift */,
 				495AB36A24CD9B39007C5130 /* AccountRow.swift */,
 				497B127424E009E700FEF018 /* AccountAdd.swift */,
 				495AB36C24CDA03B007C5130 /* AccountList.swift */,
-				495AB36E24CDA421007C5130 /* ForecastView.swift */,
+				495AB36E24CDA421007C5130 /* ForecastList.swift */,
 				495AB37024CDA4D6007C5130 /* ForecastRow.swift */,
 			);
 			path = "finance-forecast";
@@ -188,10 +189,9 @@
 		495AB36424CD7AD8007C5130 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				49E1F35D24F313CC005FF0B0 /* Forecast.swift */,
 				495AB37624CE21FA007C5130 /* UserData.swift */,
 				495AB36224CD7A10007C5130 /* Data.swift */,
-				495AB35B24CD761A007C5130 /* JTransaction.swift */,
-				495AB37224CDD88F007C5130 /* Forecast.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -337,18 +337,18 @@
 			files = (
 				495AB36324CD7A10007C5130 /* Data.swift in Sources */,
 				495AB32A24CD696A007C5130 /* AppDelegate.swift in Sources */,
-				495AB36F24CDA421007C5130 /* ForecastView.swift in Sources */,
+				495AB36F24CDA421007C5130 /* ForecastList.swift in Sources */,
 				497B127524E009E700FEF018 /* AccountAdd.swift in Sources */,
+				49E1F35E24F313CC005FF0B0 /* Forecast.swift in Sources */,
 				495AB32C24CD696A007C5130 /* SceneDelegate.swift in Sources */,
-				495AB35E24CD76DC007C5130 /* JTransactionRow.swift in Sources */,
+				495AB35E24CD76DC007C5130 /* TransactionRow.swift in Sources */,
 				49D39F3B24D8337700741A8A /* FinanceForecast.xcdatamodeld in Sources */,
-				495AB35A24CD7569007C5130 /* JTransactionList.swift in Sources */,
+				495AB35A24CD7569007C5130 /* TransactionList.swift in Sources */,
 				495AB37724CE21FB007C5130 /* UserData.swift in Sources */,
 				495AB36D24CDA03B007C5130 /* AccountList.swift in Sources */,
 				495AB36B24CD9B39007C5130 /* AccountRow.swift in Sources */,
 				495AB32E24CD696A007C5130 /* ContentView.swift in Sources */,
-				495AB37324CDD88F007C5130 /* Forecast.swift in Sources */,
-				495AB35C24CD761A007C5130 /* JTransaction.swift in Sources */,
+				49E1F35C24F30C21005FF0B0 /* TransactionAdd.swift in Sources */,
 				495AB37124CDA4D6007C5130 /* ForecastRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

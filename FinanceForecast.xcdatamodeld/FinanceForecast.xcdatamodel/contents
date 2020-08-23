@@ -7,11 +7,13 @@
     </entity>
     <entity name="Transaction" representedClassName="Transaction" syncable="YES" codeGenerationType="class">
         <attribute name="amount" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="complete" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="tx_description" attributeType="String"/>
+        <attribute name="monthly" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String"/>
     </entity>
     <elements>
         <element name="Account" positionX="-36" positionY="45" width="128" height="88"/>
-        <element name="Transaction" positionX="-54" positionY="18" width="128" height="88"/>
+        <element name="Transaction" positionX="-54" positionY="18" width="128" height="118"/>
     </elements>
 </model>

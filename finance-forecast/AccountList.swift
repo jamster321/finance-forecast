@@ -58,7 +58,7 @@ struct AccountList: View {
     func addAccount(name: String) {
         let account = Account(context: self.moc)
         account.name = name
-        account.balance = 100.0
+        account.balance = 0.0
         self.saveContext()
         self.isPresented = false
     }
