@@ -60,6 +60,12 @@ struct ContentView: View {
                     Image(systemName: "calendar")
             }
             .tag(1)
+            SavingsList()
+                .tabItem {
+                    Text("Savings")
+                    Image(systemName: "briefcase")
+            }
+            .tag(2)
         }.environmentObject(userData)
     }
 }
