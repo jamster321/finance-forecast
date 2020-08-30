@@ -19,7 +19,7 @@ struct ForecastRow: View {
                         .foregroundColor(self.totalColour)
                     Text(currencyFormatter.string(from: (self.forecast.endBalance as NSNumber))!)
                         .fontWeight(.medium)
-                    }
+                }
             }
         }
         .contentShape(Rectangle())

@@ -4,7 +4,6 @@ struct TransactionList: View {
     @Environment(\.managedObjectContext) var moc
 
     @State var isPresented = false
-    @State private var isShowingDetailView = false
     @State private var editMode = EditMode.inactive
     
     var forecast: Forecast
@@ -13,22 +12,35 @@ struct TransactionList: View {
         self.forecast = forecast
     }
     
+    @State var editedTransaction: Transaction?
+    
+    var transactionForm: some View {
+        TransactionForm(
+            onComplete: self.addTransaction,
+            onCancel: self.cancelAddTransaction,
+            transaction: self.editedTransaction!
+        )
+    }
+    
     var body: some View {
         VStack {
             List {
                 ForEach(forecast.transactions, id: \.self) { transaction in
-                    TransactionRow(transaction: transaction)
+                    TransactionRow(
+                        transaction: transaction,
+                        onEdit: {
+                            self.editedTransaction = transaction
+                            self.isPresented = true
+                        }
+                    )
                 }
                 .onDelete(perform: deleteTransaction)
             }
             .sheet(isPresented: $isPresented) {
-                TransactionAdd(
-                    onComplete: self.addTransaction,
-                    onCancel: self.cancelAddTransaction
-                )
+                self.transactionForm
             }
         }
-        .navigationBarTitle(Text("Transactions"), displayMode: .inline)
+        .navigationBarTitle(Text(self.forecast.monthString()), displayMode: .inline)
         .navigationBarItems(trailing:
             Button(action: {
                 self.isPresented.toggle()
@@ -42,11 +54,11 @@ struct TransactionList: View {
     
     func addTransaction(name: String, date: Date, amount: Float) {
         let tx = Transaction(context: self.moc)
-        
+
         tx.name = name
         tx.date = date
         tx.amount = amount
-        
+
         self.saveContext()
         self.isPresented = false
     }

@@ -1,30 +1,53 @@
 import SwiftUI
 
 struct TransactionRow: View {
-    var transaction: Transaction
+    @Environment(\.managedObjectContext) var moc
+    @ObservedObject var transaction: Transaction
+    
+    typealias MethodHandler2 = ()  -> Void
+    var onEdit: MethodHandler2
+    
     let dateFormatter = DateFormatter()
     
-    init(transaction: Transaction) {
-        dateFormatter.dateFormat = "dd MMM"
+    init(transaction: Transaction, onEdit: @escaping MethodHandler2) {
+        dateFormatter.dateFormat = "dd"
         self.transaction = transaction
+        self.onEdit = onEdit
     }
     
     @State var isChecked:Bool = false
-    func toggle(){isChecked = !isChecked}
+    func toggle(){
+        isChecked = !isChecked
+    }
     
     var body: some View {
         VStack{
-            HStack(alignment: .top) {
-                Text(dateFormatter.string(from: transaction.date!))
-                Text(transaction.name!)
-                Spacer()
-                Text(currencyFormatter.string(from: (transaction.amount * -1) as NSNumber)!)
-                Button(action: toggle){
-                    HStack{
-                        Image(systemName: isChecked ? "checkmark.square": "square")
+            Button(action: onEdit){
+                HStack(alignment: .center) {
+                    Button(action: {
+                        self.transaction.complete.toggle()
+                        self.saveContext()
+                    }){
+                        VStack {
+                            Spacer()
+                            Image(systemName: transaction.complete ? "checkmark.square.fill": "square")
+                            Spacer()
+                        }
                     }
+                    Text(transaction.name!)
+                    Spacer()
+                    Text(currencyFormatter.string(from: transaction.amount as NSNumber)!)
+
                 }
             }
+        }
+    }
+    
+    func saveContext() {
+        do {
+            try moc.save()
+        } catch {
+            print("Error saving managed object context: \(error)")
         }
     }
 }
