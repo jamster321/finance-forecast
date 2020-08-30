@@ -38,6 +38,14 @@ struct ContentView: View {
         currencyFormatter.currencyCode = "GBP"
     }
     
+    var totalBalance: Float {
+        var t: Float = 0
+        for account in accounts {
+            t += account.balance*(account.credit ? -1 : 1)
+        }
+        return t
+    }
+    
     var body: some View {
         TabView(selection: $selection){
             AccountList()
@@ -46,7 +54,7 @@ struct ContentView: View {
                     Image(systemName: "creditcard")
             }
             .tag(0)
-            ForecastList(transactions: transactions)
+            ForecastList(transactions: transactions, balance: self.totalBalance)
                 .tabItem {
                     Text("Forecast")
                     Image(systemName: "calendar")

@@ -5,7 +5,9 @@ struct Forecast: Hashable, Identifiable {
     var month: Int
     var year: Int
     var transactions: [Transaction]
-    var endBalance: Float?
+    var endBalance: Float = 0
+    
+    let monthFormatter = DateFormatter()
     
     func transactionTotal() -> Float {
         var total: Float = 0
@@ -20,5 +22,10 @@ struct Forecast: Hashable, Identifiable {
         dateComponents.year = self.year
         dateComponents.month = self.month
         return Calendar.current.date(from: dateComponents)!
+    }
+    
+    func monthString() -> String {
+        monthFormatter.dateFormat = "MMMM"
+        return monthFormatter.string(from: self.date())
     }
 }

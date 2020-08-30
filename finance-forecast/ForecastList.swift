@@ -1,14 +1,15 @@
 import SwiftUI
 
 struct ForecastList: View {
-    @State var forecastBalance: Float = 0
+    var forecastBalance: Float = 0
     
     var monthlyForecasts = [Forecast]()
     
-    init(transactions: FetchedResults<Transaction>) {
+    init(transactions: FetchedResults<Transaction>, balance: Float) {
         let currentDate = Date.init()
         let calendar = Calendar.current
         var dateComponents = DateComponents()
+        forecastBalance = balance
 
         monthlyForecasts.removeAll()
 
@@ -29,7 +30,7 @@ struct ForecastList: View {
                 }
             }
 
-            forecastBalance = forecastBalance - forecast.transactionTotal()
+            forecastBalance = forecastBalance + forecast.transactionTotal()
             forecast.endBalance = forecastBalance
 
             monthlyForecasts.append(forecast)
@@ -41,7 +42,7 @@ struct ForecastList: View {
             List {
                 ForEach(monthlyForecasts, id: \.self) { forecast in
                     NavigationLink(destination: TransactionList(forecast: forecast)) {
-                        ForecastRow(date: forecast.date(), balance: forecast.endBalance!, change: forecast.transactionTotal())
+                        ForecastRow(forecast: forecast)
                     }
                 }
             }
