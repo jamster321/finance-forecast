@@ -25,7 +25,10 @@ struct AccountList: View {
         NavigationView {
             VStack(alignment: .leading) {
                 HStack {
-                    Text("Total Balance: \( currencyFormatter.string(from: self.totalBalance as NSNumber)!)")
+                    Text("Balance")
+                        .fontWeight(.medium)
+                    Spacer()
+                    Text("\( currencyFormatter.string(from: self.totalBalance as NSNumber)!)")
                         .fontWeight(.medium)
                 }.padding([.horizontal])
                 List {
