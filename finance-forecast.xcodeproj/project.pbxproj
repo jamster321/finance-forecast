@@ -17,9 +17,7 @@
 		495AB34C24CD696F007C5130 /* finance_forecastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB34B24CD696F007C5130 /* finance_forecastUITests.swift */; };
 		495AB35A24CD7569007C5130 /* TransactionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB35924CD7569007C5130 /* TransactionList.swift */; };
 		495AB35E24CD76DC007C5130 /* TransactionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB35D24CD76DC007C5130 /* TransactionRow.swift */; };
-		495AB36024CD7745007C5130 /* transactionData.json in Resources */ = {isa = PBXBuildFile; fileRef = 495AB35F24CD7745007C5130 /* transactionData.json */; };
 		495AB36324CD7A10007C5130 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB36224CD7A10007C5130 /* Data.swift */; };
-		495AB36924CD9A79007C5130 /* accountsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 495AB36824CD9A79007C5130 /* accountsData.json */; };
 		495AB36B24CD9B39007C5130 /* AccountRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB36A24CD9B39007C5130 /* AccountRow.swift */; };
 		495AB36D24CDA03B007C5130 /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB36C24CDA03B007C5130 /* AccountList.swift */; };
 		495AB36F24CDA421007C5130 /* ForecastList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB36E24CDA421007C5130 /* ForecastList.swift */; };
@@ -66,9 +64,7 @@
 		495AB34D24CD696F007C5130 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		495AB35924CD7569007C5130 /* TransactionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionList.swift; sourceTree = "<group>"; };
 		495AB35D24CD76DC007C5130 /* TransactionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRow.swift; sourceTree = "<group>"; };
-		495AB35F24CD7745007C5130 /* transactionData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = transactionData.json; sourceTree = "<group>"; };
 		495AB36224CD7A10007C5130 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
-		495AB36824CD9A79007C5130 /* accountsData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = accountsData.json; sourceTree = "<group>"; };
 		495AB36A24CD9B39007C5130 /* AccountRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRow.swift; sourceTree = "<group>"; };
 		495AB36C24CDA03B007C5130 /* AccountList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountList.swift; sourceTree = "<group>"; };
 		495AB36E24CDA421007C5130 /* ForecastList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastList.swift; sourceTree = "<group>"; };
@@ -131,7 +127,6 @@
 			isa = PBXGroup;
 			children = (
 				495AB36424CD7AD8007C5130 /* Models */,
-				495AB36124CD791C007C5130 /* Resources */,
 				495AB32924CD696A007C5130 /* AppDelegate.swift */,
 				495AB32B24CD696A007C5130 /* SceneDelegate.swift */,
 				495AB32D24CD696A007C5130 /* ContentView.swift */,
@@ -175,15 +170,6 @@
 				495AB34D24CD696F007C5130 /* Info.plist */,
 			);
 			path = "finance-forecastUITests";
-			sourceTree = "<group>";
-		};
-		495AB36124CD791C007C5130 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				495AB35F24CD7745007C5130 /* transactionData.json */,
-				495AB36824CD9A79007C5130 /* accountsData.json */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		495AB36424CD7AD8007C5130 /* Models */ = {
@@ -306,11 +292,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				495AB36024CD7745007C5130 /* transactionData.json in Resources */,
 				495AB33624CD696E007C5130 /* LaunchScreen.storyboard in Resources */,
 				495AB33324CD696E007C5130 /* Preview Assets.xcassets in Resources */,
 				495AB33024CD696E007C5130 /* Assets.xcassets in Resources */,
-				495AB36924CD9A79007C5130 /* accountsData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
