@@ -39,11 +39,11 @@ struct AccountRow: View {
     }
 }
 
-struct AccountRow_Previews: PreviewProvider {
-    static var previews: some View {
-        let userData = UserData()
-        return AccountRow(account: userData.accounts[0])
-            .environmentObject(userData)
-            .previewLayout(.fixed(width: 300, height: 70))
-    }
-}
+//struct AccountRow_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let userData = UserData()
+//        return AccountRow(account: userData.accounts[0])
+//            .environmentObject(userData)
+//            .previewLayout(.fixed(width: 300, height: 70))
+//    }
+//}

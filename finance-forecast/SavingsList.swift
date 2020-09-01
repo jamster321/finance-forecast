@@ -13,8 +13,8 @@ struct SavingsList: View {
     
     @State var isPresented = false
     
-    var totalBalance: Float {
-        var t: Float = 0
+    var totalBalance: Double {
+        var t: Double = 0
         for account in accounts {
             t += account.balance*(account.credit ? -1 : 1)
         }

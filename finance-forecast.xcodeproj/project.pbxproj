@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491D0A1924FC15BA00DA6F91 /* Transaction+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491D0A1724FC15BA00DA6F91 /* Transaction+CoreDataClass.swift */; };
+		491D0A1A24FC15BA00DA6F91 /* Transaction+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491D0A1824FC15BA00DA6F91 /* Transaction+CoreDataProperties.swift */; };
 		492FA54724F5026F006F2E7A /* SavingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492FA54624F5026F006F2E7A /* SavingsList.swift */; };
 		495AB32A24CD696A007C5130 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB32924CD696A007C5130 /* AppDelegate.swift */; };
 		495AB32C24CD696A007C5130 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB32B24CD696A007C5130 /* SceneDelegate.swift */; };
@@ -23,12 +25,13 @@
 		495AB36D24CDA03B007C5130 /* AccountList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB36C24CDA03B007C5130 /* AccountList.swift */; };
 		495AB36F24CDA421007C5130 /* ForecastList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB36E24CDA421007C5130 /* ForecastList.swift */; };
 		495AB37124CDA4D6007C5130 /* ForecastRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB37024CDA4D6007C5130 /* ForecastRow.swift */; };
-		495AB37724CE21FB007C5130 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495AB37624CE21FA007C5130 /* UserData.swift */; };
 		497B127524E009E700FEF018 /* AccountAdd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497B127424E009E700FEF018 /* AccountAdd.swift */; };
 		49D39F3B24D8337700741A8A /* FinanceForecast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49D39F3924D8337700741A8A /* FinanceForecast.xcdatamodeld */; };
 		49E1F35C24F30C21005FF0B0 /* TransactionForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1F35B24F30C21005FF0B0 /* TransactionForm.swift */; };
 		49E1F35E24F313CC005FF0B0 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1F35D24F313CC005FF0B0 /* Forecast.swift */; };
 		49E3175224D1A6CC004F3720 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 49E3175124D1A6CC004F3720 /* Introspect */; };
+		49EEC7F524FEFE2300239DAC /* Account+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EEC7F324FEFE2300239DAC /* Account+CoreDataClass.swift */; };
+		49EEC7F624FEFE2300239DAC /* Account+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EEC7F424FEFE2300239DAC /* Account+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		491D0A1724FC15BA00DA6F91 /* Transaction+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataClass.swift"; sourceTree = "<group>"; };
+		491D0A1824FC15BA00DA6F91 /* Transaction+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transaction+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		492FA54624F5026F006F2E7A /* SavingsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavingsList.swift; sourceTree = "<group>"; };
 		495AB32624CD696A007C5130 /* Finances.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finances.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		495AB32924CD696A007C5130 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,11 +76,12 @@
 		495AB36C24CDA03B007C5130 /* AccountList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountList.swift; sourceTree = "<group>"; };
 		495AB36E24CDA421007C5130 /* ForecastList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastList.swift; sourceTree = "<group>"; };
 		495AB37024CDA4D6007C5130 /* ForecastRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastRow.swift; sourceTree = "<group>"; };
-		495AB37624CE21FA007C5130 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		497B127424E009E700FEF018 /* AccountAdd.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAdd.swift; sourceTree = "<group>"; };
 		49D39F3A24D8337700741A8A /* FinanceForecast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FinanceForecast.xcdatamodel; sourceTree = "<group>"; };
 		49E1F35B24F30C21005FF0B0 /* TransactionForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionForm.swift; sourceTree = "<group>"; };
 		49E1F35D24F313CC005FF0B0 /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
+		49EEC7F324FEFE2300239DAC /* Account+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataClass.swift"; sourceTree = "<group>"; };
+		49EEC7F424FEFE2300239DAC /* Account+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,8 +184,11 @@
 		495AB36424CD7AD8007C5130 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				49EEC7F324FEFE2300239DAC /* Account+CoreDataClass.swift */,
+				49EEC7F424FEFE2300239DAC /* Account+CoreDataProperties.swift */,
+				491D0A1724FC15BA00DA6F91 /* Transaction+CoreDataClass.swift */,
+				491D0A1824FC15BA00DA6F91 /* Transaction+CoreDataProperties.swift */,
 				49E1F35D24F313CC005FF0B0 /* Forecast.swift */,
-				495AB37624CE21FA007C5130 /* UserData.swift */,
 				495AB36224CD7A10007C5130 /* Data.swift */,
 			);
 			path = Models;
@@ -326,15 +335,18 @@
 				495AB32A24CD696A007C5130 /* AppDelegate.swift in Sources */,
 				495AB36F24CDA421007C5130 /* ForecastList.swift in Sources */,
 				492FA54724F5026F006F2E7A /* SavingsList.swift in Sources */,
+				491D0A1924FC15BA00DA6F91 /* Transaction+CoreDataClass.swift in Sources */,
 				497B127524E009E700FEF018 /* AccountAdd.swift in Sources */,
+				491D0A1A24FC15BA00DA6F91 /* Transaction+CoreDataProperties.swift in Sources */,
+				49EEC7F524FEFE2300239DAC /* Account+CoreDataClass.swift in Sources */,
 				49E1F35E24F313CC005FF0B0 /* Forecast.swift in Sources */,
 				495AB32C24CD696A007C5130 /* SceneDelegate.swift in Sources */,
 				495AB35E24CD76DC007C5130 /* TransactionRow.swift in Sources */,
 				49D39F3B24D8337700741A8A /* FinanceForecast.xcdatamodeld in Sources */,
 				495AB35A24CD7569007C5130 /* TransactionList.swift in Sources */,
-				495AB37724CE21FB007C5130 /* UserData.swift in Sources */,
 				495AB36D24CDA03B007C5130 /* AccountList.swift in Sources */,
 				495AB36B24CD9B39007C5130 /* AccountRow.swift in Sources */,
+				49EEC7F624FEFE2300239DAC /* Account+CoreDataProperties.swift in Sources */,
 				495AB32E24CD696A007C5130 /* ContentView.swift in Sources */,
 				49E1F35C24F30C21005FF0B0 /* TransactionForm.swift in Sources */,
 				495AB37124CDA4D6007C5130 /* ForecastRow.swift in Sources */,

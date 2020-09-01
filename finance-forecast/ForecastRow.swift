@@ -32,7 +32,7 @@ struct ForecastRow: View {
         }
         return c
     }
-    
+
     var monthlyTotal: String {
         var t = currencyFormatter.string(from: (self.forecast.transactionTotal()) as NSNumber)!
         if (self.forecast.transactionTotal() >= 0) {

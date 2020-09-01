@@ -5,12 +5,12 @@ struct Forecast: Hashable, Identifiable {
     var month: Int
     var year: Int
     var transactions: [Transaction]
-    var endBalance: Float = 0
+    var endBalance: Double = 0
     
     let monthFormatter = DateFormatter()
     
-    func transactionTotal() -> Float {
-        var total: Float = 0
+    func transactionTotal() -> Double {
+        var total: Double = 0
         for tx in self.transactions {
             total += tx.amount
         }

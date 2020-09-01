@@ -14,8 +14,6 @@ let currencyFormatter = NumberFormatter()
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
     
-    @EnvironmentObject private var userData: UserData
-    
     @FetchRequest(
       entity: Account.entity(),
       sortDescriptors: [
@@ -38,8 +36,8 @@ struct ContentView: View {
         currencyFormatter.currencyCode = "GBP"
     }
     
-    var totalBalance: Float {
-        var t: Float = 0
+    var totalBalance: Double {
+        var t: Double = 0
         for account in accounts {
             t += account.balance*(account.credit ? -1 : 1)
         }
@@ -54,7 +52,7 @@ struct ContentView: View {
                     Image(systemName: "creditcard")
             }
             .tag(0)
-            ForecastList(transactions: transactions, balance: self.totalBalance)
+            ForecastList(balance: self.totalBalance)
                 .tabItem {
                     Text("Forecast")
                     Image(systemName: "calendar")
@@ -66,14 +64,14 @@ struct ContentView: View {
                     Image(systemName: "briefcase")
             }
             .tag(2)
-        }.environmentObject(userData)
+        }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        let userData = UserData()
-        return ContentView()
-        .environmentObject(userData)
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        let userData = UserData()
+//        return ContentView()
+//        .environmentObject(userData)
+//    }
+//}

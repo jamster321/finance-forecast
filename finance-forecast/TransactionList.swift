@@ -4,6 +4,7 @@ struct TransactionList: View {
     @Environment(\.managedObjectContext) var moc
 
     @State var isPresented = false
+    @State var editedTransaction: Transaction?
     @State private var editMode = EditMode.inactive
     
     var forecast: Forecast
@@ -11,15 +12,13 @@ struct TransactionList: View {
     init(forecast: Forecast) {
         self.forecast = forecast
     }
-    
-    @State var editedTransaction: Transaction?
-    
-    var transactionForm: some View {
-        TransactionForm(
-            onComplete: self.addTransaction,
-            onCancel: self.cancelAddTransaction,
-            transaction: self.editedTransaction!
-        )
+
+    func onSave() {
+        do {
+            try moc.save()
+        } catch {
+            print("Error saving managed object context: \(error)")
+        }
     }
     
     var body: some View {
@@ -36,35 +35,27 @@ struct TransactionList: View {
                 }
                 .onDelete(perform: deleteTransaction)
             }
-            .sheet(isPresented: $isPresented) {
-                self.transactionForm
+            .sheet(isPresented: $isPresented, onDismiss: {
+                self.editedTransaction = nil
+            }) {
+                TransactionForm(forecast: self.forecast, transaction: self.editedTransaction, moc: self.moc)
             }
         }
         .navigationBarTitle(Text(self.forecast.monthString()), displayMode: .inline)
         .navigationBarItems(trailing:
             Button(action: {
-                self.isPresented.toggle()
+                self.editedTransaction = nil
+                self.isPresented = true
             }) {
-                Text("Add")
+                HStack {
+                    Spacer()
+                    Text("Add")
+                    Spacer()
+                }
             }
             .padding([.leading, .top, .bottom])
         )
         .environment(\.editMode, $editMode)
-    }
-    
-    func addTransaction(name: String, date: Date, amount: Float) {
-        let tx = Transaction(context: self.moc)
-
-        tx.name = name
-        tx.date = date
-        tx.amount = amount
-
-        self.saveContext()
-        self.isPresented = false
-    }
-    
-    func cancelAddTransaction() {
-        self.isPresented = false
     }
     
     func deleteTransaction(at offsets: IndexSet) {
@@ -72,15 +63,7 @@ struct TransactionList: View {
             let transation = forecast.transactions[index]
             self.moc.delete(transation)
         }
-        saveContext()
-    }
-    
-    func saveContext() {
-        do {
-            try moc.save()
-        } catch {
-            print("Error saving managed object context: \(error)")
-        }
+        onSave()
     }
 }
 
