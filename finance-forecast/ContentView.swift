@@ -50,20 +50,20 @@ struct ContentView: View {
                 .tabItem {
                     Text("Accounts")
                     Image(systemName: "creditcard")
-            }
-            .tag(0)
+                }
+                .tag(0)
             ForecastList(balance: self.totalBalance)
                 .tabItem {
                     Text("Forecast")
                     Image(systemName: "calendar")
-            }
-            .tag(1)
+                }
+                .tag(1)
             SavingsList()
                 .tabItem {
                     Text("Savings")
                     Image(systemName: "briefcase")
-            }
-            .tag(2)
+                }
+                .tag(2)
         }
     }
 }

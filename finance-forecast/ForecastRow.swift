@@ -18,7 +18,6 @@ struct ForecastRow: View {
                         .fontWeight(.light)
                         .foregroundColor(self.totalColour)
                     Text(currencyFormatter.string(from: (self.forecast.endBalance as NSNumber))!)
-                        .fontWeight(.medium)
                 }
             }
         }

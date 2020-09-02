@@ -29,8 +29,10 @@ struct TransactionRow: View {
                         }
                     }
                     Text(transaction.name)
+                        .foregroundColor(self.transaction.complete ? .secondary : .primary)
                     Spacer()
                     Text(currencyFormatter.string(from: transaction.amount as NSNumber)!)
+                        .foregroundColor(self.transaction.complete ? .secondary : .primary)
                 }
             }
         }

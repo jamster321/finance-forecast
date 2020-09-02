@@ -11,7 +11,7 @@ struct TransactionForm: View {
     var transaction: Transaction?
     
     @State var name: String = ""
-    @State var amount: String = ""
+    @State var amount: Double = 0
     @State var date: Date = Date.init()
     @State var monthly: Bool = false
     @State var complete: Bool = false
@@ -42,7 +42,7 @@ struct TransactionForm: View {
             let tx: Transaction = transaction!
             self.transaction = tx
             _name = State(initialValue: tx.name)
-            _amount = State(initialValue: currencyFormatter.string(from: (tx.amount as NSNumber))!)
+            _amount = State(initialValue: tx.amount)
             _date = State(initialValue: tx.date)
             _monthly = State(initialValue: tx.monthly)
             _complete = State(initialValue: tx.complete)
@@ -89,7 +89,7 @@ struct TransactionForm: View {
 
         tx.name = self.name
         tx.date = self.date
-        tx.amount = (self.amount as NSString).doubleValue
+        tx.amount = self.amount
         tx.complete = self.complete
         tx.monthly = self.monthly
         
