@@ -6,6 +6,7 @@ struct TransactionList: View {
     @State var isPresented = false
     @State var editedTransaction: Transaction?
     @State private var editMode = EditMode.inactive
+    @State var hideComplete = true
     
     var forecast: Forecast
     
@@ -25,16 +26,19 @@ struct TransactionList: View {
         VStack {
             List {
                 ForEach(forecast.transactions, id: \.self) { transaction in
-                    TransactionRow(
-                        transaction: transaction,
-                        onEdit: {
-                            self.editedTransaction = transaction
-                            self.isPresented = true
-                        }
-                    )
+                    if (!self.hideComplete || !transaction.complete) {
+                        TransactionRow(
+                            transaction: transaction,
+                            onEdit: {
+                                self.editedTransaction = transaction
+                                self.isPresented = true
+                            }
+                        )
+                    }
                 }
                 .onDelete(perform: deleteTransaction)
             }
+            .listStyle(PlainListStyle())
             .sheet(isPresented: $isPresented, onDismiss: {
                 self.editedTransaction = nil
             }) {
@@ -43,17 +47,27 @@ struct TransactionList: View {
         }
         .navigationBarTitle(Text(self.forecast.monthString()), displayMode: .inline)
         .navigationBarItems(trailing:
-            Button(action: {
-                self.editedTransaction = nil
-                self.isPresented = true
-            }) {
-                HStack {
+            HStack {
+                Button(action: {
+                    self.hideComplete.toggle()
+                }) {
                     Spacer()
-                    Text("Add")
+                    Image(systemName: self.hideComplete ? "eye.slash.fill" : "eye.fill")
                     Spacer()
                 }
+                .padding([.leading, .top, .bottom])
+                Button(action: {
+                    self.editedTransaction = nil
+                    self.isPresented = true
+                }) {
+                    VStack {
+                        Spacer()
+                        Text("Add")
+                        Spacer()
+                    }
+                }
+                .padding([.leading, .top, .bottom])
             }
-            .padding([.leading, .top, .bottom])
         )
         .environment(\.editMode, $editMode)
     }

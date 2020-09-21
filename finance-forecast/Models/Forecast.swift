@@ -12,7 +12,9 @@ struct Forecast: Hashable, Identifiable {
     func transactionTotal() -> Double {
         var total: Double = 0
         for tx in self.transactions {
-            total += tx.amount
+            if (!tx.complete) {
+                total += tx.amount
+            }
         }
         return total
     }

@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19G2021" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Account" representedClassName="Account" syncable="YES">
         <attribute name="balance" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="credit" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="name" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Settings" representedClassName="Settings" syncable="YES" codeGenerationType="class">
+        <attribute name="hideComplete" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
     <entity name="Transaction" representedClassName="Transaction" syncable="YES">
         <attribute name="amount" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
@@ -13,7 +17,8 @@
         <attribute name="name" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Account" positionX="-36" positionY="45" width="128" height="88"/>
+        <element name="Account" positionX="-36" positionY="45" width="128" height="103"/>
         <element name="Transaction" positionX="-54" positionY="18" width="128" height="118"/>
+        <element name="Settings" positionX="-36" positionY="72" width="128" height="58"/>
     </elements>
 </model>

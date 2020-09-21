@@ -39,6 +39,7 @@ struct SavingsList: View {
                     }
                     .onDelete(perform: deleteAccount)
                 }
+                .listStyle(PlainListStyle())
                 .sheet(isPresented: $isPresented) {
                     AccountAdd(
                         onComplete: self.addAccount,

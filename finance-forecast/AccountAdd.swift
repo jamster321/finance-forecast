@@ -25,12 +25,16 @@ struct AccountAdd: View {
                 leading: Button(action: {
                     self.onCancel()
                 }) {
+                    Spacer()
                     Text("Cancel")
+                    Spacer()
                 },
                 trailing: Button(action: {
                     self.onComplete(self.name)
                 }) {
+                    Spacer()
                     Text("Create")
+                    Spacer()
                 }
             )
         }

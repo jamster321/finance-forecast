@@ -82,6 +82,7 @@ struct ForecastList: View {
                         }
                     }
                 }
+                .listStyle(PlainListStyle())
             }
             .navigationBarTitle(Text("Forecast"))
         }
