@@ -39,7 +39,9 @@ struct ContentView: View {
     var totalBalance: Double {
         var t: Double = 0
         for account in accounts {
-            t += account.balance*(account.credit ? -1 : 1)
+            if (account.type == "current") {
+                t += account.balance*(account.credit ? -1 : 1)
+            }
         }
         return t
     }

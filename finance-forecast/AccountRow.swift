@@ -19,7 +19,7 @@ struct AccountRow: View {
     
     var body: some View {
         HStack(alignment: .top) {
-            account.name.map(Text.init)
+            Text(account.name)
             Spacer()
             TextField("Balance",
                       value: self.$account.balance,

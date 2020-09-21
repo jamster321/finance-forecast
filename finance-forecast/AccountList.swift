@@ -8,7 +8,8 @@ struct AccountList: View {
         entity: Account.entity(),
         sortDescriptors: [
             NSSortDescriptor(keyPath: \Account.name, ascending: true)
-        ]
+        ],
+        predicate: NSPredicate(format: "type == %@", "current")
     ) var accounts: FetchedResults<Account>
     
     @State var isPresented = false
@@ -62,6 +63,7 @@ struct AccountList: View {
         let account = Account(context: self.moc)
         account.name = name
         account.balance = 0.0
+        account.type = "current"
         self.saveContext()
         self.isPresented = false
     }
