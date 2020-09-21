@@ -52,7 +52,7 @@ struct TransactionList: View {
                     self.hideComplete.toggle()
                 }) {
                     Spacer()
-                    Image(systemName: self.hideComplete ? "eye.slash.fill" : "eye.fill")
+                    Image(systemName: self.hideComplete ? "eye.fill" : "eye.slash.fill")
                     Spacer()
                 }
                 .padding([.leading, .top, .bottom])
