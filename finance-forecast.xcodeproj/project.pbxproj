@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,7 +29,6 @@
 		49D39F3B24D8337700741A8A /* FinanceForecast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49D39F3924D8337700741A8A /* FinanceForecast.xcdatamodeld */; };
 		49E1F35C24F30C21005FF0B0 /* TransactionForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1F35B24F30C21005FF0B0 /* TransactionForm.swift */; };
 		49E1F35E24F313CC005FF0B0 /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E1F35D24F313CC005FF0B0 /* Forecast.swift */; };
-		49E3175224D1A6CC004F3720 /* Introspect in Frameworks */ = {isa = PBXBuildFile; productRef = 49E3175124D1A6CC004F3720 /* Introspect */; };
 		49EEC7F524FEFE2300239DAC /* Account+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EEC7F324FEFE2300239DAC /* Account+CoreDataClass.swift */; };
 		49EEC7F624FEFE2300239DAC /* Account+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EEC7F424FEFE2300239DAC /* Account+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
@@ -89,7 +88,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49E3175224D1A6CC004F3720 /* Introspect in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +209,6 @@
 			);
 			name = "finance-forecast";
 			packageProductDependencies = (
-				49E3175124D1A6CC004F3720 /* Introspect */,
 			);
 			productName = "finance-forecast";
 			productReference = 495AB32624CD696A007C5130 /* Finances.app */;
@@ -260,7 +257,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1230;
 				ORGANIZATIONNAME = "Jamie Willis";
 				TargetAttributes = {
 					495AB32524CD696A007C5130 = {
@@ -286,7 +283,6 @@
 			);
 			mainGroup = 495AB31D24CD696A007C5130;
 			packageReferences = (
-				49E3175024D1A6CC004F3720 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = 495AB32724CD696A007C5130 /* Products */;
 			projectDirPath = "";
@@ -422,6 +418,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -482,6 +479,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -672,25 +670,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		49E3175024D1A6CC004F3720 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		49E3175124D1A6CC004F3720 /* Introspect */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 49E3175024D1A6CC004F3720 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */;
-			productName = Introspect;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		49D39F3924D8337700741A8A /* FinanceForecast.xcdatamodeld */ = {

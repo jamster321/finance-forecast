@@ -1,5 +1,4 @@
 import SwiftUI
-import Introspect
 
 struct AccountList: View {
     @Environment(\.managedObjectContext) var moc

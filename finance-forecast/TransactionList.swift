@@ -2,6 +2,9 @@ import SwiftUI
 
 struct TransactionList: View {
     @Environment(\.managedObjectContext) var moc
+    
+    var fetchRequest: FetchRequest<Transaction>
+    var transactions: FetchedResults<Transaction> { fetchRequest.wrappedValue }
 
     @State var isPresented = false
     @State var editedTransaction: Transaction?
@@ -11,23 +14,24 @@ struct TransactionList: View {
     var forecast: Forecast
     
     init(forecast: Forecast) {
+        fetchRequest = FetchRequest<Transaction>(entity: Transaction.entity(), sortDescriptors: [])
         self.forecast = forecast
     }
-
-    func onSave() {
-        do {
-            try moc.save()
-        } catch {
-            print("Error saving managed object context: \(error)")
-        }
+    
+    func showCompleteTransaction(transaction: Transaction) -> Bool {
+        return !self.hideComplete || !transaction.complete
+    }
+    
+    func transactionMonth(transaction: Transaction) -> Bool {
+        return transaction.date.get(.month) == forecast.month && transaction.date.get(.year) == forecast.year
     }
     
     var body: some View {
         ZStack {
             VStack {
                 List {
-                    ForEach(forecast.transactions, id: \.self) { transaction in
-                        if (!self.hideComplete || !transaction.complete) {
+                    ForEach(transactions, id: \.self) { transaction in
+                        if (showCompleteTransaction(transaction: transaction) && transactionMonth(transaction: transaction)) {
                             TransactionRow(
                                 transaction: transaction,
                                 onEdit: {
@@ -84,16 +88,18 @@ struct TransactionList: View {
     }
     
     func deleteTransaction(at offsets: IndexSet) {
-        offsets.forEach { index in
-            let transation = forecast.transactions[index]
+        for index in offsets {
+            let transation = self.transactions[index]
             self.moc.delete(transation)
         }
-        onSave()
+        
+        // Saving here is disabled because it causes a "Simultaneous accesses" threading error
+        // We're save when the user closes the app, which is a workaround.
+        // If they force close the app or it crashes they'll lose their changes
+//        do {
+//            try self.moc.save()
+//        } catch {
+//            print("Error saving managed object context: \(error)")
+//        }
     }
 }
-
-//struct TransactionList_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TransactionList()
-//    }
-//}

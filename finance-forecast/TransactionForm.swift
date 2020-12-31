@@ -51,12 +51,14 @@ struct TransactionForm: View {
     
     var body: some View {
         NavigationView {
-            Form {
-                TextField("Name", text: self.$name)
-                DatePicker("Date", selection: self.$date, displayedComponents: .date)
-                TextField("Amount", value: self.$amount, formatter: currencyFormatter)
-                Toggle("Monthly", isOn: self.$monthly)
-                Toggle("Complete", isOn: self.$complete)
+            VStack {
+                Form {
+                    TextField("Name", text: self.$name)
+                    TextField("Amount", value: self.$amount, formatter: currencyFormatter)
+                }
+                Button(action: self.addMonthlyTransaction) {
+                    Text("Add Monthly Transactions")
+                }
             }
             .navigationBarTitle(Text(title), displayMode: .inline)
             .navigationBarItems(
@@ -88,10 +90,10 @@ struct TransactionForm: View {
         }
 
         tx.name = self.name
-        tx.date = self.date
+        tx.date = forecast.date()
         tx.amount = self.amount
-        tx.complete = self.complete
-        tx.monthly = self.monthly
+        tx.complete = false
+        tx.monthly = false
         
         do {
             try moc.save()
@@ -104,5 +106,25 @@ struct TransactionForm: View {
     
     private func onCancel() {
         self.presentationMode.wrappedValue.dismiss()
+    }
+    
+    private func addMonthlyTransaction() {
+        newTransaction(name: "Example monthly transaction 1", amount: -100.00)
+        newTransaction(name: "Example monthly transaction 2", amount: -70.00)
+
+        do {
+            try moc.save()
+        } catch {
+            print("Error saving managed object context: \(error)")
+        }
+        
+        self.presentationMode.wrappedValue.dismiss()
+    }
+    
+    private func newTransaction(name: String, amount: Double) {
+        let tx = Transaction(context: self.moc)
+        tx.name = name
+        tx.amount = amount
+        tx.date = forecast.date()
     }
 }
